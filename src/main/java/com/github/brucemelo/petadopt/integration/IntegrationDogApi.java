@@ -2,10 +2,12 @@ package com.github.brucemelo.petadopt.integration;
 
 import com.github.brucemelo.petadopt.domain.Category;
 import com.github.brucemelo.petadopt.domain.Pet;
+import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Component;
 import org.springframework.web.reactive.function.client.WebClient;
 import reactor.core.publisher.Flux;
 
+@Profile({"dev", "prod"})
 @Component
 public class IntegrationDogApi {
 

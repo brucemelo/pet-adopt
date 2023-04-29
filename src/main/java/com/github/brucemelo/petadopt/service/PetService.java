@@ -56,18 +56,10 @@ public class PetService {
     public Page<Pet> findAll(Optional<String> term, Optional<String> category, Optional<String> status, Optional<String> date, PageRequest pageRequest) {
         Specification<Pet> filterSpecs = (root, query, criteriaBuilder) -> {
             var predicates = new ArrayList<Predicate>();
-            if (term.isPresent()) {
-                predicates.add(criteriaBuilder.or(criteriaBuilder.equal(root.get(Pet_.name), term), criteriaBuilder.equal(root.get(Pet_.description), term)));
-            }
-            if (category.isPresent()) {
-                predicates.add(criteriaBuilder.equal(root.get(Pet_.category), category));
-            }
-            if (status.isPresent()) {
-                predicates.add(criteriaBuilder.equal(root.get(Pet_.status), status));
-            }
-            if (date.isPresent()) {
-                predicates.add(criteriaBuilder.equal(root.get(Pet_.date), date));
-            }
+            term.ifPresent(s -> predicates.add(criteriaBuilder.or(criteriaBuilder.equal(root.get(Pet_.name), s), criteriaBuilder.equal(root.get(Pet_.description), s))));
+            category.ifPresent(s -> predicates.add(criteriaBuilder.equal(root.get(Pet_.category), category)));
+            status.ifPresent(s -> predicates.add(criteriaBuilder.equal(root.get(Pet_.status), status)));
+            date.ifPresent(s -> predicates.add(criteriaBuilder.equal(root.get(Pet_.date), date)));
             return criteriaBuilder.and(predicates.toArray(new Predicate[0]));
         };
         return petRepository.findAll(filterSpecs, pageRequest);

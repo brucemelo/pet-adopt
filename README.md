@@ -29,6 +29,33 @@ App backend - Adopt a Pet
 
 5. Open  http://localhost:8080/swagger-ui.html
 
+## Test
+
+```
+curl -X POST --location "http://localhost:8080/api/pets/indexing"
+```
+
+```
+curl -X POST --location "http://localhost:8080/api/pets/search"
+```
+
+```
+curl -X POST --location "http://localhost:8080/api/pets/search?term=dog+1"
+```
+
+```
+curl -X PUT --location "http://localhost:8080/api/pets/1/available"
+```
+
+```
+curl -X PUT --location "http://localhost:8080/api/pets/1/adopt"
+```
+
+```
+curl -X POST --location "http://localhost:8080/api/pets/search?status=Adopt"
+```
+
+
 ## License
 MIT
 
