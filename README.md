@@ -21,11 +21,17 @@ App backend - Adopt a Pet
 
 1. Install Java/JDK 17 (https://adoptium.net/) - mark the option to set o JAVA_HOME, if possible.
 
-2. Clone this repository with ```git clone``` command.
+2. In terminal, clone this repository with ```git clone``` command.
+   
+    Example, ```git clone https://github.com/brucemelo/pet-adopt.git```
 
-3. In the root folder of project, open terminal and run ```./gradlew bootRun```.
+3. In terminal, go to the project folder ```cd /pet-adopt``` command.
+
+4. In the root folder of project, open terminal and run ```./gradlew bootRun```.
 
 ## Test
+
+1. Open new window in terminal and test with commands above.
 
 ```
 curl -X POST --location "http://localhost:8080/api/pets/indexing"
