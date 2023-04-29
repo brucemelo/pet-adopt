@@ -25,7 +25,7 @@ App backend - Adopt a Pet
    
     Example, ```git clone https://github.com/brucemelo/pet-adopt.git```
 
-3. In terminal, go to the project folder ```cd /pet-adopt``` command.
+3. In terminal, go to the project folder ```cd pet-adopt/``` command.
 
 4. In the root folder of project, open terminal and run ```./gradlew bootRun```.
 
