@@ -1,5 +1,7 @@
-# pet-adopt
-App backend in Java 17 - Spring Webflux - Spring Data JPA - Adopt a Pet
+# App backend - Adopt a Pet
+
+# Overview
+App backend - Adopt a Pet
 
 ## Tech stack
 
@@ -9,3 +11,25 @@ App backend in Java 17 - Spring Webflux - Spring Data JPA - Adopt a Pet
 - Spring Boot 3
 - Spring Webflux
 - Spring Data JPA
+
+## Integrations
+
+- https://api.thedogapi.com
+- https://api.thecatapi.com
+
+## Instructions
+
+1. Install Java/JDK 17 (https://adoptium.net/) - mark the option to set o JAVA_HOME, if possible.
+
+2. If Java/JDK 17 is installed, verify JAVA_HOME.
+
+3. git clone this repository
+
+4. In the root folder of project, open terminal and run ```.\gradew build``` to build the project or run ```./gradlew bootRun```.
+
+5. Open  http://localhost:8080/swagger-ui.html
+
+## License
+MIT
+
+The code in this repository is covered by the included license.
