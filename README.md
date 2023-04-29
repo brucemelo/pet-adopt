@@ -25,7 +25,7 @@ App backend - Adopt a Pet
 
 3. git clone this repository
 
-4. In the root folder of project, open terminal and run ```.\gradew build``` to build the project or run ```./gradlew bootRun```.
+4. In the root folder of project, open terminal and run ```./gradlew bootRun```.
 
 5. Open  http://localhost:8080/swagger-ui.html
 
