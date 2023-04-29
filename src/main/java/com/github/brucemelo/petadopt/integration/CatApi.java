@@ -2,6 +2,10 @@ package com.github.brucemelo.petadopt.integration;
 
 public class CatApi {
 
+    public CatApi() {
+
+    }
+
     public CatApi(String breed) {
         this.breed = breed;
     }

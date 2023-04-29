@@ -19,7 +19,8 @@ public class RouterFunctionConfig {
                         route(POST("/indexing"), req -> petHandler.indexPets())
                                 .andRoute(PUT("/{id}/available"), petHandler::available)
                                 .andRoute(PUT("/{id}/adopt"), petHandler::adopt)
-                                .andRoute(GET("/"), petHandler::findAll)
+                                .andRoute(GET("/search"), petHandler::findAll)
+                                .andRoute(GET(""), request -> ServerResponse.ok().bodyValue("ok"))
                 )
         );
     }

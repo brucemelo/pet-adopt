@@ -37,8 +37,8 @@ public class PetHandler {
         var category = req.queryParam("category");
         var status = req.queryParam("status");
         var date = req.queryParam("date");
-        var sizeParam = req.queryParam("size").orElseThrow();
-        var pageParam = req.queryParam("page").orElseThrow();
+        var sizeParam = req.queryParam("size").orElse("10");
+        var pageParam = req.queryParam("page").orElse("0");
         var size = Integer.parseInt(sizeParam);
         var page = Integer.parseInt(pageParam);
         Page<Pet> result = petService.findAll(

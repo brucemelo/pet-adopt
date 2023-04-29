@@ -2,6 +2,10 @@ package com.github.brucemelo.petadopt.integration;
 
 public class DogApi {
 
+    public DogApi() {
+
+    }
+
     public DogApi(String breed) {
         this.breed = breed;
     }

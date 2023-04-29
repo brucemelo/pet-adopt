@@ -10,6 +10,7 @@ import org.springframework.data.jpa.domain.Specification;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import reactor.core.publisher.Mono;
+import reactor.core.scheduler.Schedulers;
 
 import java.util.ArrayList;
 import java.util.Optional;
@@ -31,9 +32,8 @@ public class PetService {
     public Mono<Void> indexPets() {
         var dogs = providerDogsService.getDogs();
         var cats = providerCatsService.getCats();
-
-        petRepository.saveAll(dogs.toIterable());
-        petRepository.saveAll(cats.toIterable());
+        petRepository.saveAll(dogs.subscribeOn(Schedulers.boundedElastic()).collectList().share().block());
+        petRepository.saveAll(cats.subscribeOn(Schedulers.boundedElastic()).collectList().share().block());
         return Mono.empty();
     }
 
